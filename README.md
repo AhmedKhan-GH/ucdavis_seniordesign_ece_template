@@ -1,9 +1,8 @@
 # Academic Poster Template (LaTeX, 4:3)
 
-A clean, ready-to-edit **LaTeX research poster** for a generic scientific report —
-laid out in the style of the Stanford summer / [Gemini](https://github.com/anishathalye/gemini)
-poster family. Drop in your title, figures, and text and you have a conference-ready
-poster. Everything in this repo is **filler content** (lorem ipsum, placeholder figures,
+A clean, ready-to-edit **LaTeX research poster** for a generic scientific report.
+Drop in your title, figures, and text and you have a conference-ready poster.
+Everything in this repo is **filler content** (lorem ipsum, placeholder figures,
 dummy tables) so nothing needs to be deleted before you start — just replace.
 
 ![Poster preview](preview.png)
