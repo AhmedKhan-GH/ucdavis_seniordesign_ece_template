@@ -1,0 +1,303 @@
+% Scientific-report poster template, Stanford-summer style.
+% Built from the Gemini theme (https://github.com/anishathalye/gemini)
+% and Rylan Schaeffer's Stanford template
+% (https://github.com/RylanSchaeffer/Stanford-LaTeX-Poster-Template).
+%
+% COMPILE WITH XeLaTeX (Overleaf: Menu > Settings > Compiler > XeLaTeX).
+% The Gemini theme uses fontspec, which requires XeLaTeX or LuaLaTeX.
+%
+% ---------------------------------------------------------------------
+% TEMPLATE NOTES
+%   * This file is FILLER ONLY — replace every [PLACEHOLDER ...], the
+%     lorem-ipsum text, the dummy tables/equations, and the \phfig{}
+%     placeholder boxes with your own content.
+%   * Structure follows a generic scientific report: Abstract banner,
+%     numbered sections, a highlighted key-finding callout, References,
+%     and Acknowledgements.
+%   * School banner sits on the right of the header; the left side is
+%     empty (drop in your own lab/org logo with \logoleft{...}).
+%   * Poster is sized 4:3 (120 cm x 90 cm).
+%   * \phfig{width_cm}{height_cm}{label} draws a placeholder figure box.
+% ---------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% 4:3 aspect ratio (120 cm wide x 90 cm tall)
+\usepackage[size=custom,width=120,height=90,scale=1.0]{beamerposter}
+\usetheme{gemini}
+
+\setbeamerfont{title}{series=\bfseries}
+
+\usecolortheme{ucdavis}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage[most]{tcolorbox}
+\pgfplotsset{compat=1.17}
+
+% ====================
+% Lengths — 3 EQUAL COLUMNS
+% ====================
+
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.30\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% Placeholder figure box: \phfig{width_cm}{height_cm}{label}
+\newcommand{\phfig}[3]{%
+  \begin{tikzpicture}
+    \fill[boxgray] (0,0) rectangle (#1,#2);
+    \draw[aggieblue,line width=1.5pt] (0,0) rectangle (#1,#2);
+    \draw[aggiegoldDark,line width=1pt] (0,0)--(#1,#2) (0,#2)--(#1,0);
+    \node[fill=boxgray,inner sep=6pt,coolgray,font=\Large\bfseries,align=center]
+      at (#1/2,#2/2) {#3};
+  \end{tikzpicture}%
+}
+
+% Reusable lorem-ipsum filler
+\newcommand{\lorem}{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
+
+% ====================
+% Title / authors  (TOP — replace placeholders)
+% ====================
+
+\title{[PLACEHOLDER: Your Poster Title Here]}
+
+\author{\LARGE First Author \and Second Author \and Third Author}
+
+\institute[shortinst]{%
+  \large
+  \centerline{\textbf{Faculty Advisors:} [PLACEHOLDER: Advisor Name, Title] \textbullet\ [PLACEHOLDER: Advisor Name, Title]}
+  \vspace{0.3em}
+  \centerline{\textbf{Mentors:} [PLACEHOLDER: Mentor Name] \textbullet\ [PLACEHOLDER: Mentor Name]}
+}
+
+% ====================
+% Footer  (BOTTOM — replace placeholders)
+% ====================
+
+\footercontent{%
+  \rlap{\href{https://example.com}{[PLACEHOLDER: project-url.com]}}%
+  \hfill
+  [PLACEHOLDER: Conference / Event Name YYYY]%
+  \hfill
+  \llap{\href{mailto:email@example.com}{[PLACEHOLDER: email@example.com]}}}
+
+% ====================
+% Logos — school banner on the RIGHT, left side empty
+% ====================
+
+% \logoleft{\includegraphics[height=9cm]{your_logo.png}}  % optional
+\logoright{%
+  % UC Davis banner on the left, large three-digit number (e.g. poster /
+  % session ID) in line on the right — replace 123
+  \raisebox{-0.5\height}{\includegraphics[height=5.5cm]{banner.png}}%
+  \hspace{2cm}%
+  \raisebox{-0.5\height}{\fontsize{110}{110}\selectfont\bfseries\color{white}123}%
+}
+
+% ====================
+% Body  (FILLER — replace with your content)
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+
+% ---- Full-width Abstract banner ----
+\begin{columns}[t]
+\separatorcolumn
+\begin{column}{\dimexpr\paperwidth-2\sepwidth\relax}
+  \begin{alertblock}{Abstract}
+    \large
+    \lorem{} Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+  \end{alertblock}
+\end{column}
+\separatorcolumn
+\end{columns}
+
+\vspace{1.2cm}
+
+\begin{columns}[t]
+\separatorcolumn
+
+% =========================================================
+% Column 1
+% =========================================================
+\begin{column}{\colwidth}
+
+  \begin{block}{1.\ Introduction}
+    \lorem{} Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+
+    \textbf{Contributions.}
+    \begin{itemize}
+      \item Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{2.\ Related Work}
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.
+
+    \begin{itemize}
+      \item \textbf{Prior approach A:} ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam
+      \item \textbf{Prior approach B:} nisi ut aliquid ex ea commodi consequatur, quis autem vel eum iure reprehenderit
+      \item \textbf{Our distinction:} qui in ea voluptate velit esse quam nihil molestiae consequatur
+    \end{itemize}
+
+    Et harum quidem rerum facilis est et expedita distinctio nam libero tempore cum soluta nobis est eligendi optio.
+  \end{block}
+
+  \begin{block}{3.\ Problem Formulation}
+    Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae. We minimize the following objective:
+    \vspace{0.4em}
+    \[
+      \mathcal{L}(\theta) \;=\; \frac{1}{N}\sum_{i=1}^{N}\,
+        \ell\!\big(f_\theta(x_i),\, y_i\big)
+        \;+\; \lambda\,\lVert \theta \rVert_2^2 ,
+    \]
+    \vspace{-0.4em}
+
+    where $f_\theta$ is the model, $\ell(\cdot)$ the loss, and $\lambda$ a regularization weight. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias.
+    \begin{figure}
+      \centering
+      \phfig{30}{11}{Problem Setup Placeholder}
+      \caption{Placeholder: schematic of the problem setting and notation.}
+    \end{figure}
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% =========================================================
+% Column 2
+% =========================================================
+\begin{column}{\colwidth}
+
+  \begin{block}{4.\ Proposed Method}
+    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+
+    \begin{figure}
+      \centering
+      \phfig{34}{15}{Architecture Diagram Placeholder}
+      \caption{Placeholder: overview of the proposed pipeline.}
+    \end{figure}
+
+    \begin{itemize}
+      \item \textbf{Stage 1:} lorem ipsum dolor sit amet, consectetur adipiscing elit
+      \item \textbf{Stage 2:} sed do eiusmod tempor incididunt ut labore et dolore magna
+      \item \textbf{Stage 3:} ut enim ad minim veniam, quis nostrud exercitation ullamco
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{5.\ Experimental Setup}
+    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae. We evaluate on the following placeholder datasets:
+    \vspace{0.3em}
+    \begin{table}
+      \centering
+      \footnotesize
+      \setlength{\tabcolsep}{8pt}
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular*}{\colwidth}{@{\extracolsep{\fill}} l c c c}
+        \toprule
+        \textbf{Dataset} & \textbf{\# Samples} & \textbf{\# Classes} & \textbf{Split} \\
+        \midrule
+        Dataset A & 0,000 & 00 & 80/20 \\
+        Dataset B & 0,000 & 00 & 5-fold \\
+        Dataset C & 0,000 & 00 & 70/30 \\
+        \bottomrule
+      \end{tabular*}
+    \end{table}
+    \vspace{0.2em}
+    {\small Implementation: placeholder optimizer, learning rate $10^{-3}$, batch size 00, trained for 000 epochs.\par}
+
+    \vspace{0.4em}
+    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+    \begin{figure}
+      \centering
+      \phfig{32}{13}{Data / Qualitative Sample Placeholder}
+      \caption{Placeholder: representative input samples or qualitative examples.}
+    \end{figure}
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% =========================================================
+% Column 3
+% =========================================================
+\begin{column}{\colwidth}
+
+  \begin{block}{6.\ Results}
+    \begin{figure}
+      \centering
+      \phfig{32}{19}{Results Figure Placeholder}
+    \end{figure}
+    \vspace{0.2em}
+
+    \begin{table}
+      \centering
+      \footnotesize
+      \setlength{\tabcolsep}{6pt}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular*}{\colwidth}{@{\extracolsep{\fill}} l c c c}
+        \toprule
+        \textbf{Method} & \textbf{Metric A} & \textbf{Metric B} & \textbf{Metric C} \\
+        \midrule
+        Baseline    & 00.0 & 00.0 & 00.0 \\
+        Approach 1  & 00.0 & \textbf{00.0} & 00.0 \\
+        \textbf{Ours} & \textbf{00.0} & 00.0 & \textbf{00.0} \\
+        \bottomrule
+      \end{tabular*}
+    \end{table}
+
+    Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+  \end{block}
+
+  \begin{alertblock}{Key Finding}
+    Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt --- our placeholder approach improves Metric A by \textbf{00.0} points over the baseline.
+  \end{alertblock}
+
+  \begin{block}{7.\ Conclusion \& Future Work}
+    \lorem{} Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+    \begin{itemize}
+      \item \textbf{Direction 1:} lorem ipsum dolor sit amet, consectetur adipiscing
+      \item \textbf{Direction 2:} sed do eiusmod tempor incididunt ut labore et dolore
+      \item \textbf{Direction 3:} ut enim ad minim veniam, quis nostrud exercitation
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{References}
+    {\footnotesize
+      [1] A.\ Author, B.\ Author. ``Placeholder title of a related work.'' \textit{Venue}, YYYY.\par
+      [2] C.\ Author, D.\ Author. ``Another placeholder reference.'' \textit{Journal}, YYYY.\par
+      [3] E.\ Author. ``A third placeholder citation.'' \textit{Conference}, YYYY.\par
+      [4] F.\ Author, G.\ Author. ``A fourth placeholder reference.'' \textit{Preprint}, YYYY.\par
+    }
+  \end{block}
+
+  \vspace{-0.4em}
+  {\small \textbf{Acknowledgements.} [PLACEHOLDER: funding sources, collaborators, and program acknowledgements].\par}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

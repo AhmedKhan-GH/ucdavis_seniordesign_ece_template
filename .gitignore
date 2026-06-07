@@ -1,0 +1,23 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+missfont.log
+build.log
+xdv.log
+
+# macOS
+.DS_Store
+
+# Keep: main.pdf and preview.png are committed as the rendered example.
