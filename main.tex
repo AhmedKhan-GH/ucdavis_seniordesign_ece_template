@@ -93,7 +93,8 @@
 % Logos — school banner on the RIGHT, left side empty
 % ====================
 
-\logoleft{\includegraphics[height=7cm]{coe_logo.jpg}}  % College of Engineering logo
+% College of Engineering logo with a small white border
+\logoleft{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{6pt}\color{white}\fbox{\includegraphics[height=7cm]{coe_logo.jpg}}}}
 \logoright{%
   % UC Davis banner on the left, large three-digit number (e.g. poster /
   % session ID) in line on the right — replace 123
