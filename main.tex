@@ -90,18 +90,18 @@
   \llap{\href{mailto:email@example.com}{[PLACEHOLDER: email@example.com]}}}
 
 % ====================
-% Logos — school banner on the RIGHT, left side empty
+% Logos — UC Davis banner on the LEFT, College of Engineering logo on the RIGHT
 % ====================
 
-% College of Engineering logo with a small white border
-\logoleft{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{6pt}\color{white}\fbox{\includegraphics[height=7cm]{coe_logo.jpg}}}}
-\logoright{%
+\logoleft{%
   % UC Davis banner on the left, large three-digit number (e.g. poster /
   % session ID) in line on the right — replace 123
   \raisebox{-0.5\height}{\includegraphics[height=5.5cm]{banner.png}}%
   \hspace{2cm}%
   \raisebox{-0.5\height}{\fontsize{110}{110}\selectfont\bfseries\color{white}123}%
 }
+% College of Engineering logo with a small white border
+\logoright{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{6pt}\color{white}\fbox{\includegraphics[height=7cm]{coe_logo.jpg}}}}
 
 % ====================
 % Body  (FILLER — replace with your content)
